@@ -12,7 +12,7 @@ const Footer = () => {
           </li>
         ))}
       </ul>
-      <small>
+      <small className="mb-4 md:mb-0">
         Copyright &#169; 2023 Lovepreet Zelenkov Singh
       </small>
     </footer>
