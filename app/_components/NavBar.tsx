@@ -1,91 +1,87 @@
 "use client";
 
-import React, { useState } from "react";
+import * as React from "react";
 import Link from "next/link";
+import { navbarlinks, navbardownlinks, navmobilelinks } from "@/constants";
+import { useState } from "react";
+
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 import Image from "next/image";
-import { navbarlinks, mobilenavlinks } from "@/constants";
-import { Button } from "@/components/ui/button";
-import { usePathname } from 'next/navigation'
 
 const NavBar = () => {
-  const [openDropdown, setOpenDropdown] = useState("");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const pathname = usePathname();
+  const [active, setActive] = useState(false);
 
   return (
-    <>
-      <header
-        className="flex flex-row justify-center"
-        style={{ maxHeight: "300px" }}
-      >
-        <Image src="/banner.png" alt="" width={6912} height={3456} />
-      </header>
+    <nav className="flex justify-end md:flex-row md:justify-center">
       {/* Desktop */}
-      <nav className="items-center sm:flex flex-row justify-center hidden">
-        <ul className="flex flex-row">
-          {navbarlinks.map((nav) => (
-            <li
-              key={nav.id}
-              className="mx-2 relative group"
-              onMouseEnter={() => setOpenDropdown(nav.id)}
-              onMouseLeave={() => setOpenDropdown("")}
-            >
-              <Button
-                className={`my-1 ${
-                  pathname === nav.url
-                    ? "bg-red-900 hover:bg-red-900 ring-2 ring-red-400 ring-opacity-100 ring-offset-2"
-                    : "hover:ring-2 hover:ring-red-400 hover:ring-opacity-100 ring-offset-2"
-                }`}
-              >
-                <Link href={nav.url}>{nav.title}</Link>
-              </Button>
-
-              {/* Dropdown Menu */}
-              {openDropdown === nav.id && nav.sub && (
-                <div className="absolute w-32">
-                  <div className="rounded bg-white border border-black">
-                    {nav.sub.map((subOption) => (
-                      <Link
-                        key={subOption.id}
-                        href={subOption.url}
-                        className="block px-4 py-2 hover:bg-rose-100"
+      <NavigationMenu className="hidden md:block">
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            {navbardownlinks.map((navLink) => (
+              <NavigationMenuTrigger key={navLink.id}>
+                {navLink.title}
+              </NavigationMenuTrigger>
+            ))}
+            <NavigationMenuContent>
+              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                {navbardownlinks.map((navLink) =>
+                  navLink.sub.map((subLink) => (
+                    <li className="row-span-3" key={subLink.id}>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                        href={subLink.href}
                       >
-                        {subOption.title}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <nav className="flex justify-end gap-6 sm:hidden mx-10 mt-10 ">
-        <Button>Handlekurv</Button>
-        <Button>Login</Button>
-        <div className="relative inline-block">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="">
-            <Image src="/hamburger.png" alt="" width={64} height={64} style={{ maxHeight: "40px", maxWidth: "50px"}} />
-          </button>
-          {isMenuOpen && (
-            <ul className="border border-black bg-white w-40 flex flex-col text-center absolute right-0">
-              {mobilenavlinks.map((nav) => (
-                <li key={nav.id} className="border border-black ">
-                  <Link
-                    href={nav.url}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="p-2 block"
-                  >
-                    {nav.title}
-                  </Link>
-                </li>
+                        {subLink.title}
+                      </NavigationMenuLink>
+                    </li>
+                  ))
+                )}
+              </ul>
+            </NavigationMenuContent>
+            {navbarlinks.map((navLink) => (
+              <Link key={navLink.id} href={navLink.href}>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  {navLink.title}
+                </NavigationMenuLink>
+              </Link>
+            ))}
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
+
+      {/* Mobile */}
+      <Image
+        src="/ui/hamburger.png"
+        alt=""
+        width={64}
+        height={64}
+        onClick={() => setActive(!active)}
+        className="md:hidden"
+      />
+      {active && (
+        <NavigationMenu className="md:hidden">
+          <NavigationMenuList className="text-center absolute right-0 top-6">
+            <NavigationMenuItem className="flex flex-col">
+              {navmobilelinks.map((navMobLink) => (
+                <Link key={navMobLink.id} href={navMobLink.href}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    {navMobLink.title}
+                  </NavigationMenuLink>
+                </Link>
               ))}
-            </ul>
-          )}
-        </div>
-      </nav>
-    </>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+      )}
+    </nav>
   );
 };
 

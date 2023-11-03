@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/app/_components/NavBar";
-import Footer from "@/app/_components/Footer";
-import MaxWidthWrapper from "@/app/_components/MaxWidthWrapper";
-import { Toaster } from "@/components/ui/toaster"
+import MaxWidthWrapper from "./_components/MaxWithWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,15 +16,12 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <html lang="en">
-      <body className={`${inter.className}` }>
-        <MaxWidthWrapper >
+      <body className={`${inter.className}`}>
+        <MaxWidthWrapper>
           <NavBar />
           {children}
-          <Toaster />
-          <Footer />
         </MaxWidthWrapper>
       </body>
     </html>

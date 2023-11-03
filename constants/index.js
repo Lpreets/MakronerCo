@@ -1,45 +1,62 @@
-export const navbarlinks = [
+export const navmobilelinks = [
   {
-    id: "home",
-    title: "Home",
-    url: "/",
+    id: "products",
+    title: "Produkter",
+    href: "/products",
   },
   {
-    id: "produkter",
+    id: "macrones",
+    title: "Makroner",
+    href: "/products/macrones",
+  },
+  {
+    id: "information",
+    title: "Informasjon",
+    href: "/information",
+  },
+  {
+    id: "contact",
+    title: "Kontakt Oss",
+    href: "/contact",
+  },
+]
+
+export const navbardownlinks = [
+  {
+    id: "products",
     title: "Produkter",
-    url: "/product",
+    href: "/products",
     sub: [
       {
         id: "macrones",
         title: "Makroner",
-        url: "/product/macaron",
+        href: "/products/macarons",
       },
       {
         id: "completesett",
         title: "Ferdigsett",
-        url: "/product/completesett",
+        href: "/products/completesett",
       },
       {
         id: "design",
         title: "Personlig Design",
-        url: "/product/design",
+        href: "/products/design",
       },
     ],
   },
+];
+
+
+export const navbarlinks = [
   {
-    id: "informasjon",
+    id: "information",
     title: "Informasjon",
-    url: "/information",
+    href: "/information",
   },
   {
-    id: "kontaktoss",
+    id: "contact",
     title: "Kontakt Oss",
-    url: "/contact",
-  },
-  {
-    id: "checkout",
-    title: "Handlekurv",
-    url: "/checkout",
+    href: "/contact",
   },
 ];
 
@@ -285,22 +302,22 @@ export const mobilenavlinks = [
   {
     id: "produkter",
     title: "Produkter",
-    url: "/product",
+    url: "/products",
   },
   {
     id: "macrones",
     title: "Makroner",
-    url: "/product/macaron",
+    url: "/products/macarons",
   },
   {
     id: "completesett",
     title: "Ferdigsett",
-    url: "/product/completesett",
+    url: "/products/completesett",
   },
   {
     id: "design",
     title: "Personlig Design",
-    url: "/product/design",
+    url: "/products/design",
   },
   {
     id: "informasjon",

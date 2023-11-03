@@ -50,7 +50,6 @@
   }
 }
 
- 
 @layer base {
   * {
     @apply border-border;
@@ -58,32 +57,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-.custom-bg {
-  background-image: linear-gradient(rgba(255, 255, 255, 1.0), rgba(255, 255, 255, 0.8)), url('/background.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-h1 {
-  @apply text-primary;
-  font-size: 2rem/* 32px */;
-  line-height: 2.5rem/* 40px */;
-}
-
-h2 {
-  @apply text-primary;
-  font-size: 1.5rem/* 24px */;
-  line-height: 2rem/* 32px */;
-}
-
-h3 {
-  font-size: 1.25rem/* 20px */;
-  line-height: 1.75rem/* 28px */;
-}
-
-h4 {
-  @apply text-primary;
 }
