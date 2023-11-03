@@ -20,12 +20,10 @@ export const navmobilelinks = [
     href: "/contact",
   },
 ]
-
 export const navbardownlinks = [
   {
     id: "products",
     title: "Produkter",
-    href: "/products",
     sub: [
       {
         id: "macrones",
@@ -45,7 +43,6 @@ export const navbardownlinks = [
     ],
   },
 ];
-
 
 export const navbarlinks = [
   {
