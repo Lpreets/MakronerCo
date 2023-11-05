@@ -20,9 +20,7 @@ const NavBar = () => {
   return (
     <>
     <div className="flex justify-center items-center ">
-      <h3>
-        Test
-      </h3>
+  
       <Link href="/">
     <Image 
       src={logo}
@@ -32,10 +30,10 @@ const NavBar = () => {
       style={{ borderRadius: '50%' }}
     />
     </Link>
-    <h3>Test</h3>
+  
     </div>
-    <nav className="flex justify-end md:flex-row md:justify-center ">
-      <NavigationMenu className="hidden md:block">
+    <nav className="flex justify-end md:flex-row md:justify-center">
+      <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
             {navbardownlinks.map((navLink) => (
