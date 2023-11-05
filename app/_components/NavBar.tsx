@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { navbarlinks, navbardownlinks, navmobilelinks } from "@/constants";
+import  logo  from "/public/logo.png"
 
 import {
   NavigationMenu,
@@ -13,10 +14,27 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import Image from "next/image";
 
 const NavBar = () => {
   return (
-    <nav className="flex justify-end md:flex-row md:justify-center">
+    <>
+    <div className="flex justify-center items-center ">
+      <h3>
+        Test
+      </h3>
+      <Link href="/">
+    <Image 
+      src={logo}
+      alt=""
+      width={150}
+      height={150}
+      style={{ borderRadius: '50%' }}
+    />
+    </Link>
+    <h3>Test</h3>
+    </div>
+    <nav className="flex justify-end md:flex-row md:justify-center ">
       <NavigationMenu className="hidden md:block">
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -57,6 +75,7 @@ const NavBar = () => {
         </NavigationMenuList>
       </NavigationMenu>
     </nav>
+    </>
   );
 };
 
