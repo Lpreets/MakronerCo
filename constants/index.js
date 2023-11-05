@@ -37,7 +37,7 @@ export const navbardownlinks = [
       },
       {
         id: "design",
-        title: "Personlig Design",
+        title: "Design",
         href: "/products/design",
       },
     ],

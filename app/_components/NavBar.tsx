@@ -20,7 +20,6 @@ const NavBar = () => {
   return (
     <>
     <div className="flex justify-center items-center ">
-  
       <Link href="/">
     <Image 
       src={logo}
@@ -42,12 +41,12 @@ const NavBar = () => {
               </NavigationMenuTrigger>
             ))}
             <NavigationMenuContent>
-              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <ul className="p-4">
                 {navbardownlinks.map((navLink) =>
                   navLink.sub.map((subLink) => (
-                    <li className="row-span-3" key={subLink.id}>
+                    <li className="mt-2 mb-2" key={subLink.id}>
                       <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
+                        className=""
                         href={subLink.href}
                       >
                         {subLink.title}
