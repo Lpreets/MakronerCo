@@ -69,9 +69,6 @@ export default function ProfileForm() {
               <FormControl>
                 <Input placeholder="Hva heter du?" {...field} />
               </FormControl>
-              <FormDescription>
-                Så jeg vet hvem jeg som kontakter meg
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -85,9 +82,6 @@ export default function ProfileForm() {
               <FormControl>
                 <Input placeholder="Hva er emailen din?" {...field} />
               </FormControl>
-              <FormDescription>
-                Så jeg vet hvordan jeg kan kontakte deg
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -105,8 +99,6 @@ export default function ProfileForm() {
                   {...field}
                 />
               </FormControl>
-              <FormDescription>
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}

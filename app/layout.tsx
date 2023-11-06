@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/app/_components/NavBar";
-import MaxWidthWrapper from "./_components/MaxWithWrapper";
-import Footer from "./_components/Footer";
+import MaxWidthWrapper from "@/app/_components/MaxWithWrapper";
+import Footer from "@/app/_components/Footer";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default async function RootLayout({
           <NavBar />
           {children}
           <Footer />
+          <Toaster />
         </MaxWidthWrapper>
       </body>
     </html>
