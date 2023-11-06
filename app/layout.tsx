@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lora } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/app/_components/NavBar";
 import MaxWidthWrapper from "@/app/_components/MaxWithWrapper";
 import Footer from "@/app/_components/Footer";
 import { Toaster } from "@/components/ui/toaster";
 
-const inter = Inter({ subsets: ["latin"] });
+const lora = Lora({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +20,7 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
+      <body className={`${lora.className}`}>
         <MaxWidthWrapper>
           <NavBar />
           {children}

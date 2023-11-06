@@ -15,8 +15,8 @@ const Information = () => {
 
   return (
     <main>
-      <h1 className="text-center mt-10">FAQ</h1>
-      <div className="flex flex-row">
+      <h1 className="text-center mt-10 text-4xl text-pink-900">FAQ</h1>
+      <div className="flex md:flex-row flex-col">
         <div className="w-1/2 border-r-2 border-slate-950 p-6">
           <Accordion type="single" collapsible className="w-full">
             {information.map((info) => (

@@ -26,7 +26,7 @@ const MaxWidthWrapper = ({
           style={{
             position: "absolute",
             zIndex: -1,
-            opacity: 0.2,
+            opacity: 0.15,
           }}
         />
         <div className="relative">{children}</div>

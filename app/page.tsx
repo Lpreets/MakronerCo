@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main>
       <div>
-      <h1 className="text-center mt-10">Hvem er vi?</h1>
+      <h1 className="text-center mt-10 text-4xl text-pink-900">Hvem er vi?</h1>
       <div className="flex flex-col md:flex-row gap-10 mt-10 mb-20 mx-10">
         <Image
           src="/main.jpg"
