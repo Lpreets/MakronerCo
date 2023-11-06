@@ -12,25 +12,25 @@ const MaxWidthWrapper = ({
   return (
     <div
       className={cn(
-        "mx-auto w-full max-w-screen-xl md:border border-black",
+        "mx-auto max-w-screen-xl md:border border-slate-950",
         className
       )}
     >
-      <Image
-        src="/background.png"
-        alt=""
-        quality={100}
-        fill
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          objectFit: "cover",
-          zIndex: -1,
-          opacity: 0.3,
-        }}
-      />
-      <div>{children}</div>
+      <div className="relative">
+        <Image
+          src="/background.png"
+          alt=""
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          style={{
+            position: "absolute",
+            zIndex: -1,
+            opacity: 0.2,
+          }}
+        />
+        <div className="relative">{children}</div>
+      </div>
     </div>
   );
 };

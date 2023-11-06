@@ -61,17 +61,17 @@ export const footerlinks = [
   {
     id: "facebook",
     title: "Facebook",
-    url: "",
+    href: "",
   },
   {
     id: "instagram",
     title: "Instagram",
-    url: "",
+    href: "",
   },
   {
     id: "tiktok",
     title: "Tiktok",
-    url: "",
+    href: "",
   },
 ];
 
