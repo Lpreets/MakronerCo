@@ -34,7 +34,7 @@ const NavBar = () => {
     <nav className="flex justify-end md:flex-row md:justify-center">
       <NavigationMenu>
         <NavigationMenuList>
-          <NavigationMenuItem className="space-x-16">
+          <NavigationMenuItem>
             {navbardownlinks.map((navLink) => (
               <NavigationMenuTrigger key={navLink.id}>
                 {navLink.title}
@@ -44,7 +44,7 @@ const NavBar = () => {
               <ul className="p-4">
                 {navbardownlinks.map((navLink) =>
                   navLink.sub.map((subLink) => (
-                    <li className="mt-2 mb-2" key={subLink.id}>
+                    <li className="mt-2 mb-2 flex flex-row justify-center" key={subLink.id}>
                       <NavigationMenuLink
                         className={navigationMenuTriggerStyle()}
                         href={subLink.href}
