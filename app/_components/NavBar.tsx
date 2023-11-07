@@ -16,7 +16,6 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
-import { Navigation } from "lucide-react";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -81,12 +80,12 @@ const NavBar = () => {
   
 
         {/* Mobile */}
-        <div className=" relative block md:hidden mr-10">
+        <div className=" relative block md:hidden mr-7">
         <Image
               src={hamburger}
               alt=""
-              width={64}
-              height={64}
+              width={60}
+              height={60}
               onClick={() => setIsOpen(!isOpen)}
             />
           {isOpen && (

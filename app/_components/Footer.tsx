@@ -3,7 +3,7 @@ import { footerlinks } from "@/constants";
 const Footer = () => {
   return (
   <footer className="border-t p-10 border-slate-950">
-    <div className="flex flex-col md:flex-row justify-evenly">
+    <div className="flex flex-col items-center space-y-2 md:space-y-0  md:flex-row md:justify-evenly">
     {footerlinks.map((footerlink) => (
       <a key={footerlink.id} href={footerlink.href}>
         {footerlink.title}

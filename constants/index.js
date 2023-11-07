@@ -7,7 +7,7 @@ export const navmobilelinks = [
   {
     id: "macrones",
     title: "Makroner",
-    href: "/products/macrones",
+    href: "/products/macarons",
   },
   {
     id: "information",
@@ -211,7 +211,7 @@ export const information = [
   {
     id: "lorem1",
     title: "Lorem1",
-    description: "Lorem ipsum dolar sit amet",
+    description: "Lorem ipsum dolar sit amet Lorem ipsum dolar sit amet",
     expand: {
       title: "Lorem1",
       description:
@@ -221,7 +221,7 @@ export const information = [
   {
     id: "lorem2",
     title: "Lorem2",
-    description: "Lorem ipsum dolar sit amet",
+    description:  "Lorem ipsum dolar sit amet Lorem ipsum dolar sit amet",
     expand: {
       title: "Lorem2",
       description:
@@ -231,7 +231,7 @@ export const information = [
   {
     id: "lorem3",
     title: "Lorem3",
-    description: "Lorem ipsum dolar sit amet",
+    description:  "Lorem ipsum dolar sit amet Lorem ipsum dolar sit amet",
     expand: {
       title: "Lorem3",
       description:
@@ -241,7 +241,7 @@ export const information = [
   {
     id: "lorem4",
     title: "Lorem4",
-    description: "Lorem ipsum dolar sit amet",
+    description:  "Lorem ipsum dolar sit amet Lorem ipsum dolar sit amet",
     expand: {
       title: "Lorem4",
       description:
@@ -251,7 +251,7 @@ export const information = [
   {
     id: "lorem5",
     title: "Lorem5",
-    description: "Lorem ipsum dolar sit amet",
+    description:  "Lorem ipsum dolar sit amet Lorem ipsum dolar sit amet",
     expand: {
       title: "Lorem5",
       description:
@@ -261,7 +261,7 @@ export const information = [
   {
     id: "lorem6",
     title: "Lorem6",
-    description: "Lorem ipsum dolar sit amet",
+    description:  "Lorem ipsum dolar sit amet Lorem ipsum dolar sit amet",
     expand: {
       title: "Lorem6",
       description:
@@ -271,7 +271,7 @@ export const information = [
   {
     id: "lorem7",
     title: "Lorem7",
-    description: "Lorem ipsum dolar sit amet",
+    description:  "Lorem ipsum dolar sit amet Lorem ipsum dolar sit amet",
     expand: {
       title: "Lorem7",
       description:
@@ -281,7 +281,7 @@ export const information = [
   {
     id: "lorem8",
     title: "Lorem8",
-    description: "Lorem ipsum dolar sit amet",
+    description:  "Lorem ipsum dolar sit amet Lorem ipsum dolar sit amet",
     expand: {
       title: "Lorem8",
       description:
@@ -289,6 +289,7 @@ export const information = [
     },
   },
 ];
+
 
 export const mobilenavlinks = [
   {
