@@ -14,13 +14,12 @@ const Hero = () => {
         style={{
           position: "absolute",
           zIndex: -1,
-          opacity: 0.8,
         }}
       />
       <div className="flex flex-col items-center justify-center h-[220px] ml-16">
-        <h1 className="text-2xl text-rose-800">Veganske Makroner</h1>
+        <h1 className="text-2xl text-rose-800 ml-4">Veganske Makroner</h1>
         <div className="flex justify-end">
-          <span className="text-amber-600">100% Økologisk</span>
+          <span className="text-amber-600 ml-4">100% Økologisk</span>
           <span className="text-amber-600"><br />100% Nytelse</span>
         </div>
       </div>
