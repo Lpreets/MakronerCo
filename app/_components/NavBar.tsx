@@ -74,7 +74,7 @@ const NavBar = () => {
       </NavigationMenu>
 
       {/* Mobile */}
-      <div className="flex justify-between mx-6 mt-2 relative md:hidden">
+      <div className="flex justify-between mt-2 relative md:hidden">
         <div>
           {theme === "light" ? (
             <Image
@@ -116,7 +116,7 @@ const NavBar = () => {
           alt=""
           width={80}
           onClick={() => setIsOpen(!isOpen)}
-          className="dark:invert mb-4 mt-2"
+          className="dark:invert mb-4 mt-2 mr-2"
         />
         {isOpen && (
           <div className="absolute right-0 bg-popover/70 rounded-md overflow-hidden z-20">
