@@ -18,11 +18,12 @@ const MaxWidthWrapper = ({
     >
       <div className="relative">
         <Image
-          src="/background.png"
+          src=""
           alt=""
           layout="fill"
           objectFit="cover"
           quality={100}
+          className=""
           style={{
             position: "absolute",
             zIndex: -1,

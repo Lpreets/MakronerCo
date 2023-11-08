@@ -1,44 +1,39 @@
+import * as React from "react";
 import Image from "next/image";
+import Hero from "./_components/Hero";
+import { macarons } from "@/constants";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+
 
 export default function Home() {
   return (
     <main>
-      <div>
-      <h1 className="text-center mt-10 text-4xl text-pink-900">Hvem er vi?</h1>
-      <div className="flex flex-col md:flex-row gap-10 mt-10 mb-20 mx-10">
-        <Image
-          src="/main.jpg"
-          alt=""
-          width={1663}
-          height={2500}
-          className="rounded-lg"
-          style={{ maxHeight: "600px" }}
-        />
-        <div>
-          <h2>Loren Ipsum</h2>
-          <p className="mt-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-            voluptas ratione consequatur nam veritatis quas molestias, culpa
-            deserunt magnam facere sapiente, vero laboriosam porro est rem
-            provident totam corporis ipsum?
-          </p>
-          <h3 className="mt-5">Loren ipsum</h3>
-
-          <p className="mt-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-            maiores corrupti alias molestiae recusandae ullam saepe
-            necessitatibus in excepturi nisi ut nihil beatae suscipit aliquid
-            at, obcaecati, molestias fugit laboriosam?
-          </p>
-          <h3 className="mt-5">Loren ipsum</h3>
-          <p className="mt-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-            maiores corrupti alias molestiae recusandae ullam saepe
-            necessitatibus in excepturi nisi ut nihil beatae suscipit aliquid
-            at, obcaecati, molestias fugit laboriosam?
-          </p>
+      <Hero />
+      <div className="flex justify-center mt-12 mx-8">
+      <ScrollArea className="w-100 whitespace-nowrap rounded-md border border-black dark:border-gray-600">
+        <div className="flex w-max space-x-4 p-4">
+          {macarons.map((macaron) => (
+            <figure key={macaron.id} className="shrink-0">
+              <div className="overflow-hidden rounded-md">
+                <Image
+                  src={macaron.image}
+                  alt={`Photo by ${macaron.title}`}
+                  className="aspect-[3/4] h-fit w-fit object-cover"
+                  width={300}
+                  height={400}
+                />
+              </div>
+              <figcaption className="pt-2 text-xs text-muted-foreground">
+                Smak{" "}
+                <span className="font-semibold text-foreground">
+                  {macaron.title}
+                </span>
+              </figcaption>
+            </figure>
+          ))}
         </div>
-      </div>
+        <ScrollBar orientation="horizontal" />
+      </ScrollArea>
       </div>
     </main>
   );

@@ -3,8 +3,10 @@ import { Lora } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/app/_components/NavBar";
 import MaxWidthWrapper from "@/app/_components/MaxWithWrapper";
-import Footer from "@/app/_components/Footer";
 import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "./_components/ThemeProvider";
+import Footer from "./_components/Footer";
+
 
 const lora = Lora({ subsets: ["latin"] });
 
@@ -21,12 +23,19 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={`${lora.className}`}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         <MaxWidthWrapper>
           <NavBar />
           {children}
-          <Footer />
           <Toaster />
+          <Footer />
         </MaxWidthWrapper>
+          </ThemeProvider>
       </body>
     </html>
   );
