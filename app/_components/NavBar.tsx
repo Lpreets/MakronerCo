@@ -114,7 +114,7 @@ const NavBar = () => {
         <Image
           src={hamburger}
           alt=""
-          width={60}
+          width={80}
           onClick={() => setIsOpen(!isOpen)}
           className="dark:invert mb-4 mt-2"
         />
