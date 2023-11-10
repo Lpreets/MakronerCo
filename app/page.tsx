@@ -11,7 +11,7 @@ export default function Home() {
       <Hero />
       <div className="flex justify-center mt-12 mx-8">
       <ScrollArea className="w-100 whitespace-nowrap rounded-md border border-black dark:border-gray-600">
-        <div className="flex w-max space-x-4 p-4">
+        <div className="flex w-max space-x-2 p-2">
           {macarons.map((macaron) => (
             <figure key={macaron.id} className="shrink-0">
               <div className="overflow-hidden rounded-md">
@@ -19,8 +19,8 @@ export default function Home() {
                   src={macaron.image}
                   alt={`Photo by ${macaron.title}`}
                   className="aspect-[3/4] h-fit w-fit object-cover"
-                  width={300}
-                  height={400}
+                  width={150}
+                  height={250}
                 />
               </div>
               <figcaption className="pt-2 text-xs text-muted-foreground">

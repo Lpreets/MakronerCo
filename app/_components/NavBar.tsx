@@ -4,9 +4,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { navbarlinks, navbardownlinks, navmobilelinks } from "@/constants";
-import hamburger from "/public/nav/hamburger.png";
-import logodark from "/public/nav/logodark.png";
-import logowhite from "/public/nav/logowhite.png";
+import hamburger from "/public/nav/hamburger.svg";
+import logo from "/public/nav/logo.svg";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
@@ -28,7 +27,7 @@ const NavBar = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <nav className="md:flex md:flex-row md:justify-center md:mt-2 border-b-2 border-black dark:border-gray-600">
+    <nav className="border-b-2 border-gray-900 dark:border-gray-600">
       <NavigationMenu>
         <NavigationMenuList>
           {/* Desktop */}
@@ -74,27 +73,16 @@ const NavBar = () => {
       </NavigationMenu>
 
       {/* Mobile */}
-      <div className="flex justify-between mt-2 relative md:hidden">
-        <div>
-          {theme === "light" ? (
-            <Image
-              src={logowhite}
-              alt=""
-              width={100}
-              height={100}
-              onClick={() => router.push("/")}
-            />
-          ) : (
-            <Image
-              src={logodark}
-              alt=""
-              width={100}
-              height={100}
-              onClick={() => router.push("/")}
-            />
-          )}
-        </div>
-        <div className="flex items-center">
+      <div className="flex flex-row justify-between md:hidden">
+        <Image
+          src={logo}
+          alt=""
+          width={150}
+          height={150}
+          onClick={() => router.push("/")}
+       
+        />
+        <div className="flex items-center mr-10">
           {theme === "light" ? (
             <Button variant="outline" size="icon" className="h-[3rem] w-[3rem]">
               <Sun
@@ -114,9 +102,9 @@ const NavBar = () => {
         <Image
           src={hamburger}
           alt=""
-          width={80}
+          width={70}
           onClick={() => setIsOpen(!isOpen)}
-          className="dark:invert mb-4 mt-2 mr-2"
+          className="dark:invert mr-10"
         />
         {isOpen && (
           <div className="absolute right-0 bg-popover/70 rounded-md overflow-hidden z-20">
