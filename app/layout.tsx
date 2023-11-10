@@ -7,7 +7,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "./_components/ThemeProvider";
 import Footer from "./_components/Footer";
 
-
 const lora = Lora({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,19 +22,19 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={`${lora.className}`}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-        <MaxWidthWrapper>
-          <NavBar />
-          {children}
-          <Toaster />
-          <Footer />
-        </MaxWidthWrapper>
-          </ThemeProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <MaxWidthWrapper>
+            <NavBar />
+            {children}
+            <Toaster />
+            <Footer />
+          </MaxWidthWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );
