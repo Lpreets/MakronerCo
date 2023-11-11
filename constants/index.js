@@ -7,7 +7,7 @@ export const navmobilelinks = [
   {
     id: "macrones",
     title: "Makroner",
-    href: "/products/macarons",
+    href: "/products/macrones",
   },
   {
     id: "sett",
@@ -38,7 +38,7 @@ export const navbardownlinks = [
       {
         id: "macrones",
         title: "Makroner",
-        href: "/products/macarons",
+        href: "/products/macrones",
       },
       {
         id: "completesett",
