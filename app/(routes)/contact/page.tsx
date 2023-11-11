@@ -1,20 +1,20 @@
 import Image from "next/image";
 import React from "react";
 import { contactinfo } from "@/constants";
+import contact from "/public/contact/contact.jpg"
 import ProfileForm from "@/app/_components/Form";
 
 const Page = () => {
   return (
     <main>
       <h1 className="text-center mt-10 text-4xl text-pink-900">Kontakt Oss</h1>
-      <div className="flex flex-col md:flex-row gap-10 mt-10 mb-20 mx-10">
+      <div className="flex flex-col md:flex-row gap-10 mt-10 mb-20 mx-10 items-center">
         <Image
-          src="/contact.jpg"
+          src={contact}
           alt=""
-          width={1663}
-          height={2500}
-          className="md:w-1/2 rounded-lg"
-          style={{ maxHeight: "600px" }}
+          className="aspect-[3/4] h-fit w-fit object-cover"
+          width={150}
+          height={250}
         />
         <div className="md:w-1/2">
           <h2 className="text-center">Eier</h2>
