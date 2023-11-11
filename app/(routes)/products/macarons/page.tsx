@@ -1,10 +1,12 @@
+import Makroner from "@/app/_components/Makroner";
 
 
-const Page = () => {
+const Macarons = () => {
   return (
     <>
+    <Makroner />
     </>
   );
 };
 
-export default Page;
+export default Macarons;

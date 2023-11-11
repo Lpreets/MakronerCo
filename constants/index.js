@@ -10,6 +10,16 @@ export const navmobilelinks = [
     href: "/products/macarons",
   },
   {
+    id: "sett",
+    title: "Komplett Sett",
+    href: "/products/sett",
+  },
+  {
+    id: "design",
+    title: "Personlig Design",
+    href: "/products/design",
+  },
+  {
     id: "information",
     title: "Informasjon",
     href: "/information",

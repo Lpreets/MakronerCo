@@ -1,17 +1,33 @@
-import Image from "next/image";
+"use client"
+
 import React from "react";
-import hero from "/public/hero/hero.svg";
+import Image from "next/image";
+import { useTheme } from "next-themes";
+import logolight from "/public/hero/logolight.gif";
+import logodark from "/public/hero/logodark.gif";
 
 const Hero = () => {
+  const { theme, setTheme } = useTheme();
+
   return (
-    <div className="">
+    <div>
+      {theme === "light" ? (
       <Image 
-        src={hero}
-        alt="hero"
-        width={1280}
-        height={720}
+        src={logolight}
+        alt=""
+        width={900}
+        height={900}
         className="px-10 mt-10"
       />
+      ) : (
+         <Image 
+        src={logodark}
+        alt=""
+        width={900}
+        height={900}
+        className="px-10 mt-10"
+      />
+      )}
     </div>
   );
 };

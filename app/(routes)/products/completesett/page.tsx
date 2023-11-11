@@ -1,10 +1,9 @@
+import React from 'react'
 
-
-const Page = () => {
+const Sett = () => {
   return (
-    <>
-    </>
-  );
-};
+    <div>Sett</div>
+  )
+}
 
-export default Page;
+export default Sett

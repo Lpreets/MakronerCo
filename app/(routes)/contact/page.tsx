@@ -7,7 +7,7 @@ import ProfileForm from "@/app/_components/Form";
 const Page = () => {
   return (
     <main>
-      <h1 className="text-center mt-10 text-4xl text-pink-900">Kontakt Oss</h1>
+      <h1 className="text-center mt-10 text-3xl text-red-900">Kontakt Oss</h1>
       <div className="flex flex-col md:flex-row gap-10 mt-10 mb-20 mx-10 items-center">
         <Image
           src={contact}
