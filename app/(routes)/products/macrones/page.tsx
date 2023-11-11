@@ -1,12 +1,12 @@
 import Makroner from "@/app/_components/Makroner";
 
 
-const Macarons = () => {
+const Macrones = () => {
   return (
     <>
-    <Makroner />
+      <Makroner />
     </>
   );
 };
 
-export default Macarons;
+export default Macrones;

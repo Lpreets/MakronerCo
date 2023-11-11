@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Lora } from "next/font/google";
 import "./globals.css";
-import NavBar from "@/app/_components/NavBar";
+import Header from "@/app/_components/Header";
 import MaxWidthWrapper from "@/app/_components/MaxWithWrapper";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "./_components/ThemeProvider";
@@ -29,7 +29,7 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <MaxWidthWrapper>
-            <NavBar />
+            <Header />
             {children}
             <Toaster />
             <Footer />
