@@ -1,14 +1,13 @@
 import React from "react";
 import { simpliefiedProduct } from "../interface";
-import { client, urlFor } from "../lib/sanity";
-import Link from "next/link";
+import { client } from "../lib/sanity";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import Image from "next/image";
 import Counter from "./Counter";
 import AddToCart from "./AddToCart";
 
 async function getData() {
-  const query = `* [_type == 'product'] {
+  const query = `*[_type == 'macron'] {
     _id,
       name,
       price,
@@ -36,8 +35,8 @@ const Makroner = async () => {
                   src={macaron.imageUrl}
                   alt={`Photo by ${macaron.name}`}
                   className="aspect-[3/4] h-fit w-fit object-cover"
-                  width={150}
-                  height={250}
+                  width={250}
+                  height={350}
                 />
               </div>
               <div className="flex flex-col justify-center text-center pt-2">

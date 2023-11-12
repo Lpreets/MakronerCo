@@ -7,7 +7,7 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import Image from "next/image";
 
 async function getData(slug: string) {
-  const query = `*[_type == "macron" && slug.current == "${slug}"][0] {
+  const query = `*[_type == "completesett" && slug.current == "${slug}"][0] {
     _id,
       images,
       price,
@@ -21,7 +21,7 @@ async function getData(slug: string) {
   return data;
 }
 
-const Macrone = async ({ params }: { params: { slug: string } }) => {
+const Sett = async ({ params }: { params: { slug: string } }) => {
   const data = await getData(params.slug);
 
   return (
@@ -66,4 +66,4 @@ const Macrone = async ({ params }: { params: { slug: string } }) => {
   );
 };
 
-export default Macrone;
+export default Sett;

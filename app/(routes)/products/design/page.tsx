@@ -1,55 +1,62 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { client, urlFor } from "@/app/lib/sanity";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { ArrowRight } from "lucide-react";
+import { personligDesign } from "@/app/interface";
 
-const Design = () => {
+async function getData() {
+  const query = `*[_type == "design"] {
+    _id,
+    images,
+    description,
+  }`;
+
+  const data = await client.fetch(query);
+
+  return data;
+}
+
+const Design = async () => {
+  const data: personligDesign[] = await getData();
+
   return (
-    <main>
-      <h1 className="mt-10 text-center">Personlig Design</h1>
-      <div className="flex flex-col md:flex-row gap-10 mt-10 mb-20 mx-10">
-        <Image
-          src="/contact.jpg"
-          alt=""
-          width={1663}
-          height={2500}
-          className="md:w-1/2 rounded-lg"
-          style={{ maxHeight: "600px" }}
-        />
+    <main className="mt-8">
+      <h1 className="text-center text-3xl text-red-900 mb-8">
+        Personlig Design
+      </h1>
+      {data.map(design => (
+      <div key={design._id} className="flex flex-col md:flex-row gap-10 mt-10 mb-20 mx-10">
+        <ScrollArea className="w-100 whitespace-nowrap rounded-md border border-black dark:border-gray-600">
+          <div className="flex w-max space-x-2 p-2">
+            {design.images.map((image: any, idx: any) => (
+              <div key={idx} className="overflow-hidden rounded-md">
+                <Image
+                  src={urlFor(image).url()}
+                  alt=""
+                  className="aspect-[3/4] h-fit w-fit object-cover"
+                  width={250}
+                  height={350}
+                />
+              </div>
+          ))} 
+          </div>
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
         <div className="md:w-1/2 flex flex-col space-y-4">
           <h2>Lorem ipsum</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
-            error repellendus corrupti repellat accusamus est doloribus, totam
-            et maiores doloremque placeat. Nam ipsum similique natus culpa
-            ducimus laboriosam eum iusto?
-          </p>
-          <h3>Loren ipsum</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            laborum repellendus, excepturi a animi explicabo, aut ullam,
-            repellat voluptate consectetur facilis voluptates! Animi ex qui
-            necessitatibus molestias praesentium, nisi repudiandae!
-          </p>
-          <h3>Loren ipsum</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            laborum repellendus, excepturi a animi explicabo, aut ullam,
-            repellat voluptate consectetur facilis voluptates! Animi ex qui
-            necessitatibus molestias praesentium, nisi repudiandae!
+            {design.description}
           </p>
           <Link href="/product/design">
             <b className="flex items-center">
-              Kontakt oss&nbsp;
-              <Image
-                src="/assets/rightarrow.png"
-                alt=""
-                width={16}
-                height={16}
-              />
+              Kontakt oss&nbsp; <ArrowRight />
             </b>
           </Link>
         </div>
       </div>
+      ))}
     </main>
   );
 };

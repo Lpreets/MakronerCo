@@ -1,23 +1,18 @@
 export default {
-    name: 'product',
+    name: 'design',
     type: 'document',
-    title: 'Product',
+    title: 'Design',
     fields: [
-        {
-            name: "name",
-            type: "string",
-            title: "Name of the product"
-        },
         {
             name: "images",
             type: "array",
-            title: "Product Images",
+            title: "Design Images",
             of: [{type: "image"}],
         },
         {
             name: "description",
             type: "text",
-            title: "Description of the product",
+            title: "Description of the Design",
         },
         {
             name: "slug",
@@ -29,13 +24,8 @@ export default {
             },
         },
         {
-            name: "price",
-            title: "Price",
-            type: "number",
-        },
-        {
             name: "category",
-            title: "Product Category",
+            title: "Design Category",
             type: "reference",
             to: [{type: "category"}],
         }

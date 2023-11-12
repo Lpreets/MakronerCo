@@ -1,13 +1,12 @@
 import React from "react";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { macarons } from "@/constants";
 import Image from "next/image";
 import { client, urlFor } from "../lib/sanity";
 import { simpliefiedProduct } from "../interface";
 import Link from "next/link";
 
 async function getData() {
-  const query = `*[_type == 'product'] {
+  const query = `*[_type == 'macron'] {
     _id,
       name,
       'slug': slug.current,
@@ -26,7 +25,7 @@ const PhotoScroll = async () => {
     <div>
       <div className="mt-8">
         <h1 className="text-center text-3xl text-red-900">Presenterer</h1>
-        <div className="flex flex-col justify-center  mx-8">
+        <div className="flex flex-col justify-center mx-8">
           <h2 className="text-center text-2xl my-4 text-slate-600">
             Franske Makroner
           </h2>
@@ -40,8 +39,8 @@ const PhotoScroll = async () => {
                       src={urlFor(product.imageUrl).url()}
                       alt={`Photo by ${product.name}`}
                       className="aspect-[3/4] h-fit w-fit object-cover"
-                      width={150}
-                      height={250}
+                      width={250}
+                      height={350}
                     />
                     </Link>
                   </div>
@@ -65,21 +64,21 @@ const PhotoScroll = async () => {
           </h2>
           <ScrollArea className="w-100 whitespace-nowrap rounded-md border border-black dark:border-gray-600">
             <div className="flex w-max space-x-2 p-2">
-              {macarons.map((macaron) => (
-                <figure key={macaron.id} className="shrink-0">
+              {data.map((veganskemakroner) => (
+                <figure key={veganskemakroner._id} className="shrink-0">
                   <div className="overflow-hidden rounded-md">
                     <Image
-                      src={macaron.image}
-                      alt={`Photo by ${macaron.title}`}
+                      src={urlFor(veganskemakroner.imageUrl).url()}
+                      alt={`Photo by ${veganskemakroner.name}`}
                       className="aspect-[3/4] h-fit w-fit object-cover"
-                      width={150}
-                      height={250}
+                      width={250}
+                      height={350}
                     />
                   </div>
                   <figcaption className="pt-2 text-xs text-muted-foreground">
                     Smak{" "}
                     <span className="font-semibold text-foreground">
-                      {macaron.title}
+                      {veganskemakroner.name}
                     </span>
                   </figcaption>
                 </figure>

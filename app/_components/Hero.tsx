@@ -18,6 +18,7 @@ const Hero = () => {
         width={900}
         height={900}
         className="px-10 mt-10"
+        priority={true}
       />
       ) : (
          <Image 
@@ -26,6 +27,7 @@ const Hero = () => {
         width={900}
         height={900}
         className="px-10 mt-10"
+        priority={true}
       />
       )}
     </div>

@@ -7,6 +7,16 @@ export default {
             name: "name",
             title: "Name of Category",
             type: "string",
-        }
+        },
+        {
+            name: "image",
+            type: "image",
+            title: "Category Image",
+        },
+        {
+            name: "description",
+            type: "text",
+            title: "Description of the category",
+        },
     ]
 }
