@@ -1,6 +1,5 @@
 import { client, urlFor } from "@/app/lib/sanity";
 import React from "react";
-import Counter from "@/app/_components/Counter";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import Image from "next/image";
 
@@ -52,7 +51,6 @@ const Macrone = async ({ params }: { params: { slug: string } }) => {
               </figcaption>
             </div>
             <div>
-              <Counter />
             </div>
           </figure>
         </div>

@@ -4,7 +4,6 @@ import Image from "next/image";
 import { client, urlFor } from "@/app/lib/sanity";
 import { simpliefiedProduct } from "@/app/interface";
 import Link from "next/link";
-import Counter from "@/app/_components/Counter";
 
 async function getData() {
   const query = `*[_type == "completesett" ] {
@@ -51,7 +50,6 @@ const CompleteSett = async () => {
                 </figcaption>
               </div>
               <div>
-                <Counter />
               </div>
             </figure>
           ))}
