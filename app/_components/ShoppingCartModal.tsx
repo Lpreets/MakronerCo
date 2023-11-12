@@ -42,12 +42,12 @@ const ShoppingCartModal = () => {
                 </div>
                 <div className="ml-4 flex flex-1 flex-col">
                   <div>
-                    <div className="flex justify-between text-base font-medium text-gray-900">
+                    <div className="flex justify-between text-base font-medium text-gray-200">
                       <h3>{entry.name}</h3>
                       <p>{entry.price} Kr</p>
                     </div>
                     <div className="flex flex-1 items-end justify-between text-sm">
-                      <p className="text-gray-500">Stykk: {entry.quantity}</p>
+                      <p className="text-gray-200">Stykk: {entry.quantity}</p>
                     </div>
                       <X onClick={() => removeItem(entry.id)}/>
                   </div>
