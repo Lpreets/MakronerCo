@@ -1,8 +1,6 @@
-import { fullProduct } from "@/app/interface";
 import { client, urlFor } from "@/app/lib/sanity";
 import React from "react";
 import Counter from "@/app/_components/Counter";
-import AddToCart from "@/app/_components/AddToCart";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import Image from "next/image";
 
@@ -60,7 +58,6 @@ const Macrone = async ({ params }: { params: { slug: string } }) => {
         </div>
       </div>
       <div className="flex justify-center mt-8">
-        <AddToCart />
       </div>
     </div>
   );
