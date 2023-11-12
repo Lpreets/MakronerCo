@@ -8,7 +8,7 @@ import hamburger from "/public/nav/hamburger.svg";
 import logo from "/public/nav/logo.svg";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
-import { Moon, ShoppingBasket, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 
 import {
   NavigationMenu,
@@ -20,16 +20,8 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 import Image from "next/image";
+import ShoppingCartModal from "./ShoppingCartModal";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -142,25 +134,7 @@ const Header = () => {
             )}
           </div>
           <div className="flex items-center">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="h-[3rem] w-[3rem]"
-                >
-                  <ShoppingBasket className="h-[3rem] w-[3rem] light:invert" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="top">
-                <SheetHeader>
-                  <SheetTitle>Your Cart</SheetTitle>
-                </SheetHeader>
-                <SheetClose asChild>
-                  <Button>Save changes</Button>
-                </SheetClose>
-              </SheetContent>
-            </Sheet>
+          <ShoppingCartModal />
           </div>
           <Image
             src={hamburger}

@@ -21,7 +21,7 @@ async function getData() {
 }
 
 const Makroner = async () => {
-  const data: simpliefiedProduct[] = await getData();
+  const data: simpliefiedProduct = await getData();
 
   return (
     <div className="mx-8 mt-8">
@@ -56,7 +56,7 @@ const Makroner = async () => {
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
       <div className="flex justify-center mt-8">
-        <AddToCart />
+        <AddToCart currency="NOK" image={data.imageUrl} name={data.name} price={data.price} key={data._id}    />
       </div>
     </div>
   );

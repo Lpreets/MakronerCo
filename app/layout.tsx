@@ -6,6 +6,7 @@ import MaxWidthWrapper from "@/app/_components/MaxWithWrapper";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "./_components/ThemeProvider";
 import Footer from "./_components/Footer";
+import CartProvider from "./_components/Providers";
 
 const lora = Lora({ subsets: ["latin"] });
 
@@ -29,10 +30,12 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <MaxWidthWrapper>
+            <CartProvider>
             <Header />
             {children}
             <Toaster />
             <Footer />
+            </CartProvider>
           </MaxWidthWrapper>
         </ThemeProvider>
       </body>
