@@ -38,6 +38,7 @@ const Sett = async ({ params }: { params: { slug: string } }) => {
                     className="aspect-[3/4] h-fit w-fit object-cover"
                     width={250}
                     height={350}
+                    placeholder="blur"
                   />
                 </div>
               ))}

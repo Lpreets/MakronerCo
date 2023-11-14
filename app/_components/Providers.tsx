@@ -9,8 +9,8 @@ const CartProvider = ({ children }: { children: ReactNode }) => {
       mode="payment"
       cartMode="client-only"
       stripe={process.env.NEXT_PUBLIC_STRIPE_KEY as string}
-      successUrl="http://localhost:3000/payment/success"
-      cancelUrl="http://localhost:3000/payment/error"
+      successUrl="https://www.makroner.no/payment/success"
+      cancelUrl="https://www.makroner.no/payment/error"
       currency="NOK"
       billingAddressCollection={true}
       shouldPersist={true}

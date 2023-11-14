@@ -37,6 +37,7 @@ const Products = async () => {
                   className="aspect-[3/4] h-fit w-fit object-cover"
                   width={250}
                   height={350}
+                  placeholder="blur"
                 />
               </div>
               <div className="flex flex-col justify-center text-center pt-2">
