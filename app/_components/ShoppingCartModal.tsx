@@ -34,7 +34,8 @@ const ShoppingCartModal = () => {
           <ShoppingBasket className="h-[3rem] w-[3rem] light:invert" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="top" className="flex flex-col justify-center">
+      <div className="flex flex-col justify-center">
+      <SheetContent side="top">
         <SheetHeader>
           <SheetTitle>Your Cart</SheetTitle>
         </SheetHeader>
@@ -91,6 +92,7 @@ const ShoppingCartModal = () => {
         </div>
         <Button onClick={handleCheckoutClick}>Kjøp</Button>
       </SheetContent>
+      </div>
     </Sheet>
   );
 };
