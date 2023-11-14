@@ -10,9 +10,10 @@ export interface ProdutCart {
   price: number;
   image: string;
   currency: 'NOK',
+  price_id: string;
 }
 
-const AddToCartMulti = ({id, price, image, name, currency}: ProdutCart) => {
+const AddToCartMulti = ({id, price, image, name, price_id, currency}: ProdutCart) => {
   const { addItem } = useShoppingCart();
   const [count, setCount] = useState(0)
 
@@ -22,6 +23,7 @@ const AddToCartMulti = ({id, price, image, name, currency}: ProdutCart) => {
     price: price,
     image: image,
     currency: currency,
+    price_id: price_id
   }
 
   return (

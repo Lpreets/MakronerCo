@@ -11,7 +11,8 @@ async function getData(slug: string) {
       price,
       name,
       description,
-      "slug": slug.current
+      "slug": slug.current,
+      price_id
   }`;
 
   const data = await client.fetch(query);
@@ -53,7 +54,7 @@ const Macrone = async ({ params }: { params: { slug: string } }) => {
             </div>
           </figure>
           <div className="mb-6">
-            <AddToCartMulti id={data._id} name={data.name} image={urlFor(data.images[0]).url()} price={data.price} currency="NOK" />
+            <AddToCartMulti id={data._id} name={data.name} image={urlFor(data.images[0]).url()} price={data.price} price_id={data.price_id} currency="NOK" />
           </div>
         </div>
       </div>

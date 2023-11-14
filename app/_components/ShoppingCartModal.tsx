@@ -12,8 +12,20 @@ import { useShoppingCart } from "use-shopping-cart";
 import Image from "next/image";
 
 const ShoppingCartModal = () => {
-  const { cartDetails, removeItem, incrementItem, decrementItem, totalPrice } =
+  const { cartDetails, removeItem, incrementItem, decrementItem, totalPrice, redirectToCheckout } =
     useShoppingCart();
+
+  const handleCheckoutClick = async (event: any) => {
+    event.preventDefault();
+    try {
+      const result = await redirectToCheckout();
+      if (result?.error) {
+        console.log(result.error.message);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+  }
 
   return (
     <Sheet>
@@ -77,7 +89,7 @@ const ShoppingCartModal = () => {
             <p>Total: {totalPrice} Kr</p>
           </div>
         </div>
-        <Button>Kjøp</Button>
+        <Button onClick={handleCheckoutClick}>Kjøp</Button>
       </SheetContent>
     </Sheet>
   );

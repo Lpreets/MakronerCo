@@ -1,4 +1,3 @@
-import { fullProduct } from "@/app/interface";
 import { client, urlFor } from "@/app/lib/sanity";
 import React from "react";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
@@ -55,8 +54,8 @@ const Sett = async ({ params }: { params: { slug: string } }) => {
             <div>
             </div>
           </figure>
-          <div div className="mb-6">
-          <AddToCartMulti id={data._id} name={data.name} image={urlFor(data.images[0]).url()} price={data.price} currency="NOK" />
+          <div className="mb-6">
+          <AddToCartMulti id={data._id} name={data.name} image={urlFor(data.images[0]).url()} price={data.price} price_id={data.price_id} currency="NOK" />
           </div>
         </div>
       </div>

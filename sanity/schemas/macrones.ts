@@ -1,7 +1,7 @@
 export default {
     name: 'macron',
     type: 'document',
-    title: 'Makron',
+    title: 'Macron',
     fields: [
         {
             name: "name",

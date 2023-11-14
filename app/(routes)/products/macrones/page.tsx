@@ -48,7 +48,7 @@ const MacronesPage = async () => {
                 <figcaption className="text-muted-foreground">
                   {macaron.price} kr/stk
                 </figcaption>
-                <AddToCartMulti id={macaron._id} price={macaron.price} image={macaron.imageUrl} name={macaron.name} currency="NOK" />
+                <AddToCartMulti id={macaron._id} price={macaron.price} image={macaron.imageUrl} name={macaron.name} price_id={macaron.price_id} currency="NOK" />
               </div>
               <div className="flex justify-center mt-4">
               </div>
