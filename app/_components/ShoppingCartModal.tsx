@@ -57,7 +57,7 @@ const ShoppingCartModal = () => {
                   <div>
                     <div className="flex justify-between text-base font-medium text-gray-200">
                       <h3>{entry.name}</h3>
-                      <p>{entry.price} Kr</p>
+                      <p key={entry.price_id}>{entry.price} Kr</p>
                     </div>
                     <div className="flex flex-1 items-end justify-between text-sm">
                       <p className="text-gray-200">

@@ -49,7 +49,7 @@ const CompleteSett = async () => {
                 <figcaption className="text-muted-foreground">
                   {sett.price} kr/stk
                 </figcaption>
-                <AddToCartMulti id={sett._id} name={sett.name} image={sett.imageUrl} price={sett.price} currency="NOK" price_id={sett.price_id} />
+                <AddToCartMulti name={sett.name} image={sett.imageUrl} price={sett.price} currency="NOK" price_id={sett.price_id} />
               </div >
               <div className="flex justify-center mt-4">
               </div>

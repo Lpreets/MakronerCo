@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button'
 import { useShoppingCart } from 'use-shopping-cart'
 
 export interface ProdutCart {
-  id: string;
   name: string;
   price: number;
   image: string;
@@ -13,12 +12,12 @@ export interface ProdutCart {
   price_id: string;
 }
 
-const AddToCartMulti = ({id, price, image, name, price_id, currency}: ProdutCart) => {
+const AddToCartMulti = ({price, image, name, price_id, currency}: ProdutCart) => {
   const { addItem } = useShoppingCart();
   const [count, setCount] = useState(0)
 
   const product = {
-    id: id,
+
     name: name,
     price: price,
     image: image,

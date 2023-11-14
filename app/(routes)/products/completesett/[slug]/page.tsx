@@ -55,7 +55,7 @@ const Sett = async ({ params }: { params: { slug: string } }) => {
             </div>
           </figure>
           <div className="mb-6">
-          <AddToCartMulti id={data._id} name={data.name} image={urlFor(data.images[0]).url()} price={data.price} price_id={data.price_id} currency="NOK" />
+          <AddToCartMulti name={data.name} image={urlFor(data.images[0]).url()} price={data.price} price_id={data.price_id} currency="NOK" />
           </div>
         </div>
       </div>
