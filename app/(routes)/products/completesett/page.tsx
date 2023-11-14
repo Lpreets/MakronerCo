@@ -4,6 +4,7 @@ import Image from "next/image";
 import { client, urlFor } from "@/app/lib/sanity";
 import { simpliefiedProduct } from "@/app/interface";
 import Link from "next/link";
+import AddToCartMulti from "@/app/_components/AddToCartMulti";
 
 async function getData() {
   const query = `*[_type == "completesett" ] {
@@ -48,8 +49,9 @@ const CompleteSett = async () => {
                 <figcaption className="text-muted-foreground">
                   {sett.price} kr/stk
                 </figcaption>
-              </div>
-              <div>
+                <AddToCartMulti id={sett._id} name={sett.name} image={sett.imageUrl} price={sett.price} currency="NOK" />
+              </div >
+              <div className="flex justify-center mt-4">
               </div>
             </figure>
           ))}

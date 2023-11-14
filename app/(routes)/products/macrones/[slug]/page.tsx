@@ -2,6 +2,7 @@ import { client, urlFor } from "@/app/lib/sanity";
 import React from "react";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import Image from "next/image";
+import AddToCartMulti from "@/app/_components/AddToCartMulti";
 
 async function getData(slug: string) {
   const query = `*[_type == "macron" && slug.current == "${slug}"][0] {
@@ -50,12 +51,11 @@ const Macrone = async ({ params }: { params: { slug: string } }) => {
                 {data.price} kr/stk
               </figcaption>
             </div>
-            <div>
-            </div>
           </figure>
+          <div className="mb-6">
+            <AddToCartMulti id={data._id} name={data.name} image={urlFor(data.images[0]).url()} price={data.price} currency="NOK" />
+          </div>
         </div>
-      </div>
-      <div className="flex justify-center mt-8">
       </div>
     </div>
   );

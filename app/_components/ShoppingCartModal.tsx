@@ -12,7 +12,8 @@ import { useShoppingCart } from "use-shopping-cart";
 import Image from "next/image";
 
 const ShoppingCartModal = () => {
-  const { cartDetails, removeItem, totalPrice } = useShoppingCart();
+  const { cartDetails, removeItem, incrementItem, decrementItem, totalPrice } =
+    useShoppingCart();
 
   return (
     <Sheet>
@@ -25,14 +26,14 @@ const ShoppingCartModal = () => {
         <SheetHeader>
           <SheetTitle>Your Cart</SheetTitle>
         </SheetHeader>
-        <div className="h-full justify-between">
-          <ul className="-my-6 divide-y divide-gray-200">
+        <div className="justify-between">
+          <ul className="">
             {Object.values(cartDetails ?? {}).map((entry) => (
               <li
                 key={entry.id}
-                className="flex py-6 overflow-hidden rounded-md border border-gray-200"
+                className="flex py-6 rounded-md"
               >
-                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                   <Image
                     src={entry.image as string}
                     alt=""
@@ -47,9 +48,24 @@ const ShoppingCartModal = () => {
                       <p>{entry.price} Kr</p>
                     </div>
                     <div className="flex flex-1 items-end justify-between text-sm">
-                      <p className="text-gray-200">Stykk: {entry.quantity}</p>
+                      <p className="text-gray-200">
+                        Stykk:{" "}
+                        <Button
+                          className="mx-2"
+                          onClick={() => decrementItem(entry.id)}
+                        >
+                          -
+                        </Button>{" "}
+                        {entry.quantity}{" "}
+                        <Button
+                          className="mx-2"
+                          onClick={() => incrementItem(entry.id)}
+                        >
+                          +
+                        </Button>
+                      </p>
+                    <X onClick={() => removeItem(entry.id)} />
                     </div>
-                      <X onClick={() => removeItem(entry.id)}/>
                   </div>
                 </div>
               </li>

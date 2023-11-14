@@ -3,6 +3,7 @@ import { client, urlFor } from "@/app/lib/sanity";
 import React from "react";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import Image from "next/image";
+import AddToCartMulti from "@/app/_components/AddToCartMulti";
 
 async function getData(slug: string) {
   const query = `*[_type == "completesett" && slug.current == "${slug}"][0] {
@@ -54,6 +55,9 @@ const Sett = async ({ params }: { params: { slug: string } }) => {
             <div>
             </div>
           </figure>
+          <div div className="mb-6">
+          <AddToCartMulti id={data._id} name={data.name} image={urlFor(data.images[0]).url()} price={data.price} currency="NOK" />
+          </div>
         </div>
       </div>
       <div className="flex justify-center mt-8">

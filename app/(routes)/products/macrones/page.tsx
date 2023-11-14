@@ -4,7 +4,7 @@ import Image from "next/image";
 import { simpliefiedProduct } from "@/app/interface";
 import { client } from "@/app/lib/sanity";
 import Link from "next/link";
-import AmountCart from "@/app/_components/AmountCart";
+import AddToCartMulti from "@/app/_components/AddToCartMulti";
 
 async function getData() {
   const query = `*[_type == 'macron'] {
@@ -48,7 +48,7 @@ const MacronesPage = async () => {
                 <figcaption className="text-muted-foreground">
                   {macaron.price} kr/stk
                 </figcaption>
-                <AmountCart data={data} />
+                <AddToCartMulti id={macaron._id} price={macaron.price} image={macaron.imageUrl} name={macaron.name} currency="NOK" />
               </div>
               <div className="flex justify-center mt-4">
               </div>
