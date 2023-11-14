@@ -22,7 +22,7 @@ async function getData() {
 }
 
 const MacronesPage = async () => {
-  const data: simpliefiedProduct = await getData();
+  const data: simpliefiedProduct[] = await getData();
 
   return (
     <div className="mx-8 mt-8">

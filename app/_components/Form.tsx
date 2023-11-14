@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -43,9 +42,6 @@ export default function ProfileForm() {
     },
   });
 
-  {
-    /*Come back to this later*/
-  }
   function onSubmit(data: z.infer<typeof formSchema>) {
     toast({
       title: "You submitted the following values:",

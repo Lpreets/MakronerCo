@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { ReactNode } from "react";
 
 const MaxWidthWrapper = ({
@@ -12,27 +11,12 @@ const MaxWidthWrapper = ({
   return (
     <div
       className={cn(
-        "mx-auto max-w-screen-xl md:border border-slate-950",
+        "mx-auto max-w-screen-xl",
         className
       )}
     >
-      <div className="relative">
-        <Image
-          src=""
-          alt=""
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-          className=""
-          style={{
-            position: "absolute",
-            zIndex: -1,
-            opacity: 0.15,
-          }}
-        />
         <div className="relative">{children}</div>
       </div>
-    </div>
   );
 };
 

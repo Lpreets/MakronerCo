@@ -3,6 +3,7 @@ import React from "react";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import Image from "next/image";
 import AddToCartMulti from "@/app/_components/AddToCartMulti";
+import { fullProduct } from "@/app/interface";
 
 async function getData(slug: string) {
   const query = `*[_type == "macron" && slug.current == "${slug}"][0] {
@@ -21,7 +22,7 @@ async function getData(slug: string) {
 }
 
 const Macrone = async ({ params }: { params: { slug: string } }) => {
-  const data = await getData(params.slug);
+  const data: fullProduct = await getData(params.slug);
 
   return (
     <div className="mt-8">
@@ -44,6 +45,7 @@ const Macrone = async ({ params }: { params: { slug: string } }) => {
             </div>
             <ScrollBar orientation="horizontal" />
           </ScrollArea>
+          <p className="text-center">{data.description}</p>
           <figure key={data._id} className="shrink-0">
             <div className="overflow-hidden rounded-md"></div>
             <div className="flex flex-col justify-center text-center pt-2">

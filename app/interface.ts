@@ -4,6 +4,7 @@ export interface simpliefiedProduct {
     price: number;
     slug: string;
     name: string;
+    price_id: string;
 }
 
 export interface fullProduct {

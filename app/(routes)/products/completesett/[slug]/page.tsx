@@ -3,6 +3,7 @@ import React from "react";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import Image from "next/image";
 import AddToCartMulti from "@/app/_components/AddToCartMulti";
+import { fullProduct } from "@/app/interface";
 
 async function getData(slug: string) {
   const query = `*[_type == "completesett" && slug.current == "${slug}"][0] {
@@ -20,7 +21,7 @@ async function getData(slug: string) {
 }
 
 const Sett = async ({ params }: { params: { slug: string } }) => {
-  const data = await getData(params.slug);
+  const data: fullProduct = await getData(params.slug);
 
   return (
     <div className="mt-8">
