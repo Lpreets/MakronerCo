@@ -23,7 +23,7 @@ async function getData() {
 }
 
 const InformationPage = async () => {
-  const data: information = await getData();
+  const data: information[] = await getData();
 
   return (
     <main>
