@@ -37,7 +37,7 @@ const Products = async () => {
                   className="aspect-[3/4] h-fit w-fit object-cover"
                   width={250}
                   height={350}
-                  placeholder="blur"
+                  priority={true}
                 />
               </div>
               <div className="flex flex-col justify-center text-center pt-2">
@@ -59,6 +59,8 @@ const Products = async () => {
             </figure>
           ))}
         </div>
+      <div className="mt-4">
+      </div>
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
     </div>
