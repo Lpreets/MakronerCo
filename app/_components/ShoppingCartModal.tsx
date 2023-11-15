@@ -38,12 +38,12 @@ const ShoppingCartModal = () => {
       <div className="flex flex-col justify-center">
       <SheetContent side="top">
         <SheetHeader>
-          <SheetTitle>Your Cart</SheetTitle>
+          <SheetTitle>Din Handlekurv</SheetTitle>
         </SheetHeader>
         <ScrollArea style={{ height: '340px' }} >
         <div className="justify-between">
           <ul className="">
-            {Object.values(cartDetails ?? {}).map((entry) => (
+            {Object.values(cartDetails  ?? {}).map((entry) => (
               <li
                 key={entry.id}
                 className="flex py-6 rounded-md"
