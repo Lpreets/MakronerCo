@@ -140,6 +140,7 @@ const Header = () => {
             src={hamburger}
             alt=""
             width={70}
+            height={70}
             onClick={() => setIsOpen(!isOpen)}
             className="dark:invert mr-4"
           />
