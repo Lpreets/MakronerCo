@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { ShoppingBasket, X } from "lucide-react";
 import { useShoppingCart } from "use-shopping-cart";
 import Image from "next/image";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 
 const ShoppingCartModal = () => {
   const { cartDetails, removeItem, incrementItem, decrementItem, totalPrice, redirectToCheckout } =
@@ -39,6 +40,7 @@ const ShoppingCartModal = () => {
         <SheetHeader>
           <SheetTitle>Your Cart</SheetTitle>
         </SheetHeader>
+        <ScrollArea style={{ height: '340px' }} >
         <div className="justify-between">
           <ul className="">
             {Object.values(cartDetails ?? {}).map((entry) => (
@@ -85,7 +87,9 @@ const ShoppingCartModal = () => {
             ))}
           </ul>
         </div>
-        <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
+        <ScrollBar orientation="vertical" />
+        </ScrollArea>
+        <div className="border-t border-gray-200 px-4 py-6 sm:px-6 sticky">
           <div className="flex justify-between text-base font-medium text-gray-200">
             <p>Total: {totalPrice} Kr</p>
           </div>
