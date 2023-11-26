@@ -3,8 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import logolight from "/public/hero/logolight.gif";
-import logodark from "/public/hero/logodark.gif";
+import logo from "/public/hero/logo.gif";
 
 const Hero = () => {
   const { theme, setTheme } = useTheme();
@@ -13,7 +12,7 @@ const Hero = () => {
     <div>
       {theme === "light" ? (
       <Image 
-        src={logolight}
+        src={logo}
         alt=""
         width={900}
         height={900}
@@ -22,7 +21,7 @@ const Hero = () => {
       />
       ) : (
          <Image 
-        src={logodark}
+        src={logo}
         alt=""
         width={900}
         height={900}
