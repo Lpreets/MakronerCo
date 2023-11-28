@@ -7,6 +7,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "./_components/ThemeProvider";
 import Footer from "./_components/Footer";
 import CartProvider from "./_components/Providers";
+import SupabaseProvider from "@/providers/SupabaseProvider";
+import ModalProvider from "@/providers/ModalProvider";
 
 const lora = Lora({ subsets: ["latin"] });
 
@@ -30,12 +32,15 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <MaxWidthWrapper>
+            <SupabaseProvider>
             <CartProvider>
+            <ModalProvider />
             <Header />
             {children}
             <Toaster />
             <Footer />
             </CartProvider>
+            </SupabaseProvider>
           </MaxWidthWrapper>
         </ThemeProvider>
       </body>
