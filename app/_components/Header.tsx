@@ -22,6 +22,7 @@ import {
 
 import Image from "next/image";
 import ShoppingCartModal from "./ShoppingCartModal";
+import ModalProvider from "@/providers/ModalProvider";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -132,6 +133,9 @@ const Header = () => {
                 />
               </Button>
             )}
+          </div>
+          <div className="flex items-center">
+              <ModalProvider />
           </div>
           <div className="flex items-center">
           <ShoppingCartModal />
